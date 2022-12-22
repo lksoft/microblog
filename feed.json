@@ -1,0 +1,79 @@
+{
+	"version": "https://jsonfeed.org/version/1",
+	"title": "It’s the Little Things",
+	"icon": "https://micro.blog/littleknown/avatar.jpg",
+	"home_page_url": "https://blog.scottjlittle.net/",
+	"feed_url": "https://blog.scottjlittle.net/feed.json",
+	"items": [
+		
+			{
+				"id": "http://littleknown.micro.blog/2022/12/23/unfortunately-christmas-plans.html",
+				
+				"content_html": "<p>Unfortunately, Christmas plans are messed up because some of us feel a little sick. But don&rsquo;t want to spread it to others.</p>\n",
+				"content_text": "Unfortunately, Christmas plans are messed up because some of us feel a little sick. But don't want to spread it to others. \n",
+				"date_published": "2022-12-23T00:30:31+01:00",
+				"url": "https://blog.scottjlittle.net/2022/12/23/unfortunately-christmas-plans.html"
+			},
+			{
+				"id": "http://littleknown.micro.blog/2022/12/17/since-jean-mentioned.html",
+				
+				"content_html": "<p>Since <a href=\"https://micro.blog/jean\">@jean</a> mentioned that there weren’t enough dog photos here is my 🐕 Laika chewing her toy</p>\n<!-- raw HTML omitted -->\n",
+				"content_text": "Since [@jean](https://micro.blog/jean) mentioned that there weren’t enough dog photos here is my 🐕 Laika chewing her toy\n\n<img src=\"uploads/2022/833914f824.jpg\" width=\"600\" height=\"450\" alt=\"\">\n",
+				"date_published": "2022-12-17T01:51:16+01:00",
+				"url": "https://blog.scottjlittle.net/2022/12/17/since-jean-mentioned.html",
+				"tags": ["Dog"]
+			},
+			{
+				"id": "http://littleknown.micro.blog/2022/12/17/well-i-thought.html",
+				
+				"content_html": "<p>We’ll I thought it was time to go to bed, not sure I can though 🐕</p>\n<!-- raw HTML omitted -->\n",
+				"content_text": "We’ll I thought it was time to go to bed, not sure I can though 🐕\n\n<img src=\"uploads/2022/8f40e8106d.jpg\" width=\"600\" height=\"450\" alt=\"\">\n",
+				"date_published": "2022-12-17T00:17:57+01:00",
+				"url": "https://blog.scottjlittle.net/2022/12/17/well-i-thought.html",
+				"tags": ["Dog"]
+			},
+			{
+				"id": "http://littleknown.micro.blog/2022/12/16/zaz-concert-date.html",
+				"title": "Zaz 🎵 (20.10.2022 Sopot)",
+				"content_html": "<!-- raw HTML omitted -->\n",
+				"content_text": "<h3>Zaz</h3>\n<p><strong>Concert Date:</strong> <em>22 October 2022</em><br /><strong>Location:</strong> <em>Ergo Arena, Sopot</em></p>\n<p>Zaz is a french pop singer/songwriter who has a special place in french culture, mixing pop sensibilities along with more classical french stylings, such as Edith Piaf. We have had the chance to see her three times here in Poland. She does seem to be popular here. My entire family is a fan of hers. The tickets for this concert were my birthday gift to my wife earlier in the year. We went as a family, as you can see below.</p>\n<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" title=\"IMG_2778.png\" src=\"https://blog.scottjlittle.net/uploads/2022/b33350aee4.png\" alt=\"IMG 2778\" width=\"600\" height=\"450\" border=\"0\" /></p>\n<p>Zaz is a very personable entertainer and takes time to talk to the audience and chat about the songs that she is going to sing and what they mean to her or how they were written. However, typically, as a french entertainer, she talks to everyone in French. She did ask and the audience was enthusiastic about it and it seemed that most understood what she said. She did take a couple of occasions to speak a pre-written text in Polish, which was also highly appreciated by the audience, if difficult to understand (Polish is really hard to speak for those not familiar with it!)</p>\n<p>Anyway, it was a great show and we enjoyed it very much. She had a great support band who played great music for her to sing to. Several of her more known hits really got the fans singing along (as we did). It is difficult to get Poles to get out of their chairs dancing around, but she did manage. The set of the show was very nicely decorated, with an entire tree up on the stage (which you can see in the image below behind the bassist).</p>\n<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" title=\"IMG_2772.png\" src=\"https://blog.scottjlittle.net/uploads/2022/341391d086.png\" alt=\"IMG 2772\" width=\"600\" height=\"392\" border=\"0\" /></p>\n<p>Another great concert that we were very happy to attend.</p>\n",
+				"date_published": "2022-12-16T11:50:20+01:00",
+				"url": "https://blog.scottjlittle.net/2022/12/16/zaz-concert-date.html",
+				"tags": ["Concert","Music"]
+			},
+			{
+				"id": "http://littleknown.micro.blog/2022/12/15/just-finished-reading.html",
+				
+				"content_html": "<p>Just finished reading: <a href=\"https://micro.blog/books/9781250766380\">The Expert System&rsquo;s Champion (The Expert System&rsquo;s Brother Book 2)</a> by Adrian Tchaikovsky 📚\nThis book and its predecessor <a href=\"https://micro.blog/books/9781250197559\">The Expert System&rsquo;s Brother</a> are great! I love the realistic aspect of how exploration on another planet is dealt with and not ignored as usual in SciFi.</p>\n",
+				"content_text": "Just finished reading: [The Expert System's Champion (The Expert System's Brother Book 2)](https://micro.blog/books/9781250766380) by Adrian Tchaikovsky 📚\nThis book and its predecessor [The Expert System's Brother](https://micro.blog/books/9781250197559) are great! I love the realistic aspect of how exploration on another planet is dealt with and not ignored as usual in SciFi. \n",
+				"date_published": "2022-12-15T07:28:30+01:00",
+				"url": "https://blog.scottjlittle.net/2022/12/15/just-finished-reading.html",
+				"tags": ["Book"]
+			},
+			{
+				"id": "http://littleknown.micro.blog/2022/12/15/so-it-looks.html",
+				
+				"content_html": "<p>So it looks like I am going to start actually posting here on Mb. I have mostly been a lurker on twitter, but I want to change that since I have changed to be here. Content will probably be mostly around activities that I do, concerts, movies and maybe some ultimate frisbee as well.</p>\n",
+				"content_text": "So it looks like I am going to start actually posting here on Mb. I have mostly been a lurker on twitter, but I want to change that since I have changed to be here. Content will probably be mostly around activities that I do, concerts, movies and maybe some ultimate frisbee as well. \n",
+				"date_published": "2022-12-15T06:23:39+01:00",
+				"url": "https://blog.scottjlittle.net/2022/12/15/so-it-looks.html"
+			},
+			{
+				"id": "http://littleknown.micro.blog/2022/12/15/we-like-to.html",
+				
+				"content_html": "<p>We like to celebrate Christmas in our home, but cutting a tree down is too wasteful. We started doing something like this a few years ago and I really like it.</p>\n<!-- raw HTML omitted -->\n",
+				"content_text": "We like to celebrate Christmas in our home, but cutting a tree down is too wasteful. We started doing something like this a few years ago and I really like it.\n\n<img src=\"uploads/2022/a8409d2701.jpg\" width=\"450\" height=\"600\" alt=\"\">\n",
+				"date_published": "2022-12-15T00:11:07+01:00",
+				"url": "https://blog.scottjlittle.net/2022/12/15/we-like-to.html"
+			},
+			{
+				"id": "http://littleknown.micro.blog/2022/12/14/tides-from-nebula.html",
+				"title": "Tides From Nebula 🎵 (11.11.2022 Gdansk)",
+				"content_html": "<!-- raw HTML omitted -->\n",
+				"content_text": "<h3>Tides From Nebula</h3>\n<p><strong>Concert Date:</strong> <em>11 November 2022</em><br /><strong>Location:</strong> <em>B90 Klub (in Stocznia), Gdańsk</em></p>\n<p>This is either the 3rd or 4th time that I have seen Tides From Nebula play live. The first time was at the anniversary concert of <a href=\"https:/progresja.com/en\">Klub Progresja</a> in Warsaw probably about 6 or 7 years ago. From the first time that I saw these guys play live I have been mesmerized by the live shows. It was a little harder for me to get into the post-rock genre just listening to the albums, but I eventually found that I really enjoy that as well, but (as with most music, at least for me) the real pleasure is a live show.</p>\n<p>This show had 2 “bands” playing before them. I put that in quotes, because the first was a solo act playing keyboards and trying to sound like a group. He goes by the name Wishlake. The music was pleasant, but had no real interest for me, so I don’t remember muh about it.</p>\n<p>The second group however, <a href=\"https://www.facebook.com/yantra20k/\">Yantra</a> was quite interesting with a mix of progish/post-rock sound, but a good addition that was nice. I wasn’t able to grasp much of the lyrics (in English) at the concert, but the mix of the vocals and the singer’s stage presence were engaging.</p>\n<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" title=\"IMG_2828.jpeg\" src=\"https://blog.scottjlittle.net/uploads/2022/dd42bf753d.jpg\" alt=\"IMG 2828\" width=\"600\" height=\"450\" border=\"0\" /></p>\n<p>The main show was, of course, Tides From Nebula. Post-rock is a very specific genre and if you don’t enjoy the sound well, there is nothing to say. But these guys are a great mix together, on the drums Tomasz Stołowski, the bass Przemek Węgłowski and on guitar, Maciej Karbowski. Tomasz is very energetic on the drums putting out some great rhythms throughout the set. Both Przymek and Maciej also perform on the keyboards and sample themselves into loops to create the waves of sound that make up the music.</p>\n<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" title=\"IMG_2834.jpeg\" src=\"https://blog.scottjlittle.net/uploads/2022/43bc0f7a76.jpg\" alt=\"IMG 2834\" width=\"600\" height=\"450\" border=\"0\" /></p>\n<p>It was also just a lot of fun to see a band really enjoying being up on the stage and interacting with the audience in a fun and enthusiastic way. They really looked out and smiled and waved at people. In general, I really had a great time listening to these guys play. It really is amusic that creates a double feeling of complexity and yet is danceable.</p>\n",
+				"date_published": "2022-12-14T17:29:08+01:00",
+				"url": "https://blog.scottjlittle.net/2022/12/14/tides-from-nebula.html",
+				"tags": ["Concert","Music"]
+			}
+	]
+}
