@@ -24,6 +24,59 @@
 	
 	  <div class="h-entry">
 		
+			<h1><a href="https://blog.scottjlittle.net/2023/05/23/icloud-keyvalue-store.html">iCloud Key-Value Store Across Apps Outside the Store</a></h1>
+		
+
+		<a href="https://blog.scottjlittle.net/2023/05/23/icloud-keyvalue-store.html" class="u-url"><time class="dt-published" datetime="2023-05-23 18:22:15 &#43;0200">May 23, 2023</time></a>
+
+		<div class="e-content">
+			 <h1 id="using-icloud-key-value-store-across-apps">Using iCloud Key-Value Store Across Apps</h1>
+<p>We wanted to use this for a couple of our macOS apps that are <strong>not</strong> distributed through the App Store. The first thing that I noted was that in the documentation for <a href="https://developer.apple.com/documentation/foundation/nsubiquitouskeyvaluestore"><code>NSUbiquitousKeyValueStore</code></a>, the last paragraph of the Overview says:</p>
+<pre><code>&quot;To use this class, you must distribute your app through the App Store or Mac App Store&quot;
+</code></pre>
+<p>I was instantly discouraged by this and so I started looking at the other iCloud functionality to see if it had the same limits. I didn&rsquo;t see anything in the documentation, nor in the search results that I found online. So I started to look at using that as a possibility. This seemed possible, but overly complicated for a couple of simple values that I wanted to make available. And again, online there were some implications that you needed to have at least one app in an App Store to be able to use the iCloud functionality, so I asked in a developer slack that I am a member of and got some uncertain replies about both iCloud in general and key-value specifically. So I decided to just write two apps and see what happens.</p>
+<p>Turns out that it is pretty simple to do and works well enough. In fact, there even is documentation about it, but man was it not easy to find. So here is what you need to do and the links to documents that describe it.</p>
+<p>So the first useful thing was a link to the <a href="https://developer.apple.com/help/account/reference/supported-capabilities-macos/">supported capabilities for macOS</a> page that <a href="https://mjtsai.com">Michael Tsai</a> pointed me at, that said clearly that the key-value store <strong>is</strong> usable by an app distributed using a Developer ID! That is progress. I have raised a Feedback about the documentation issues (FB12199267), we&rsquo;ll see if it gets fixed.</p>
+<p>The next step is to make sure that your app has the correct capabilities. I added the iCloud capability to the app and checked the  Key-value storage item in that section.</p>
+<!-- raw HTML omitted -->
+<p>To use with multiple apps, you need to ensure that they are all using the same identifier for the key-value store. However, you cannot set that in the UI as you can for the CloudKit Containers. You&rsquo;ll need to open the entitlements file and edit it directly. Find the <code>iCloud Key-Value Store</code> item and adjust the value to be a common one that you use in all apps. In <a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/iCloudDesignGuide/Chapters/iCloudFundametals.html#//apple_ref/doc/uid/TP40012094-CH6-SW26">this document</a>, which I found later on (not when searching – I actually can&rsquo;t remember where I clicked to get there), they give you details about how to do this (search for &ldquo;Multiple Apps&rdquo;) and they recommend using the id of the &ldquo;main&rdquo; app to share the info and then set that for all apps.</p>
+<p>That can work, but I just designated a specific id (i.e. <code>com.littleknownsoftware.key-values.common</code>). You should just replace the part after the <code>$(TeamIdentifierPrefix)</code> though. I am not 100% sure if it would be a problem to remove it, but it seems like it would. Also you could try using a wildcard there (i.e. <code>com.littleknownsoftware.key-values.*</code>), but I don&rsquo;t know if that would work or not. It seems unlikely.</p>
+<p>I had some issues with the provisioning and signing, but since these will vary for each setup, I am not going to go into that too much. If you normally just use the &ldquo;Automatically manage signing&rdquo;, hopefully it will work for you. If not then you need to be sure to manually create the Identifier for the app and the profile in your developer account online, like I did.</p>
+<p>Using the Key-Value store is super easy after this stuff is all setup. In your <code>applicationDidFinishLaunching:</code> method, you can setup to receive notifications when things change like this:</p>
+<pre tabindex="0"><code>	func applicationDidFinishLaunching(_ aNotification: Notification) {
+		NotificationCenter.default.addObserver(self, selector: #selector(storeDidChange), name: NSUbiquitousKeyValueStore.didChangeExternallyNotification, object: NSUbiquitousKeyValueStore.default)
+		NSUbiquitousKeyValueStore.default.synchronize()
+	}
+</code></pre><p>In a very simple case of displaying the values that are they, you will get those notifications in the method below and reload the tableView as follows:</p>
+<pre tabindex="0"><code>	@objc
+	func storeDidChange(_ note: Notification) {
+		OperationQueue.main.addOperation {
+			tableView.reloadData()
+		}
+	}
+
+	//	MARK: TableView Delegation
+	func numberOfRows(in tableView: NSTableView) -&gt; Int {
+		return NSUbiquitousKeyValueStore.default.dictionaryRepresentation.count
+	}
+	
+	func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -&gt; Any? {
+		let dict = NSUbiquitousKeyValueStore.default.dictionaryRepresentation
+		guard row &lt; dict.count else {
+			return nil
+		}
+		let key = dict.keys.sorted()[row]
+		return [&quot;key&quot;: key, &quot;value&quot;: dict[key]]
+	}
+</code></pre><p>Note that the notification will come in on a background thread, so be sure to put your UI actions on the main thread so you don&rsquo;t crash!</p>
+<p>To set values, simple call <code>NSUbiquitousKeyValueStore.default.set(&quot;key&quot;, forKey: &quot;value&quot;)</code>.</p>
+<p>All your apps will have access to this data, as long as the user is logged into iCloud.</p>
+
+		</div>
+	  </div>
+	
+	  <div class="h-entry">
+		
 
 		<a href="https://blog.scottjlittle.net/2023/04/19/spring-in-paris.html" class="u-url"><time class="dt-published" datetime="2023-04-19 12:20:59 &#43;0200">Apr 19, 2023</time></a>
 
@@ -147,7 +200,7 @@
 
 		<div class="e-content">
 			 <p>March photo blogging challenge day 7 (missed the first 6 🤫). My <strong>whole</strong> family on the go through Europe.
-<img src="https://blog.scottjlittle.net/uploads/2023/25492c2fc7.jpg" alt="62ED21DD-0F27-49E8-B826-10E7870FF0DA.jpg"></p>
+<img src="https://cdn.uploads.micro.blog/611/2023/25492c2fc7.jpg" alt="62ED21DD-0F27-49E8-B826-10E7870FF0DA.jpg"></p>
 
 		</div>
 	  </div>
@@ -274,7 +327,7 @@
 
 		<div class="e-content">
 			 <p>20 years ago last night, I met my better half. It has been a great adventure with her! I wish everyone such luck and love.
-<img src="https://blog.scottjlittle.net/uploads/2023/7619f6e242.jpg" alt="BA012D5E-A468-47B7-B4E1-E69966BCD7CD.jpg"></p>
+<img src="https://cdn.uploads.micro.blog/611/2023/7619f6e242.jpg" alt="BA012D5E-A468-47B7-B4E1-E69966BCD7CD.jpg"></p>
 
 		</div>
 	  </div>
@@ -313,7 +366,7 @@
 
 		<div class="e-content">
 			 <p>I have always enjoyed an Old Fashion or a Sazarac, but today is the first time I made one myself
-<img src="https://blog.scottjlittle.net/uploads/2022/ddba7cc2a8.jpg" alt="CD0E2963-7CD9-44D1-B780-498B75D49EA4.jpg"></p>
+<img src="https://cdn.uploads.micro.blog/611/2022/ddba7cc2a8.jpg" alt="CD0E2963-7CD9-44D1-B780-498B75D49EA4.jpg"></p>
 
 		</div>
 	  </div>
@@ -325,8 +378,8 @@
 
 		<div class="e-content">
 			 <p>Happy whatever you celebrate (or not). We had a great Christmas Eve and my wife made an awesome bûch de noël.
-<img src="https://blog.scottjlittle.net/uploads/2022/98913ee32e.jpg" alt="3D09221F-CB12-4CAC-A9D4-3BC3D7220CC6.jpg">
-<img src="https://blog.scottjlittle.net/uploads/2022/51182fdc01.jpg" alt="9E72A2A4-82A0-408B-8BF4-0D35A09C62C5.jpg"></p>
+<img src="https://cdn.uploads.micro.blog/611/2022/98913ee32e.jpg" alt="3D09221F-CB12-4CAC-A9D4-3BC3D7220CC6.jpg">
+<img src="https://cdn.uploads.micro.blog/611/2022/51182fdc01.jpg" alt="9E72A2A4-82A0-408B-8BF4-0D35A09C62C5.jpg"></p>
 
 		</div>
 	  </div>
